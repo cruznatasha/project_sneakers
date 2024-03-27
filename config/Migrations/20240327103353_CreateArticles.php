@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 use Migrations\AbstractMigration;
 
-class CreateUsers extends AbstractMigration
+class CreateArticles extends AbstractMigration
 {
     /**
      * Change Method.
@@ -14,7 +14,7 @@ class CreateUsers extends AbstractMigration
      */
     public function change(): void
     {
-        $table = $this->table('users');
+        $table = $this->table('articles');
         $table->addColumn('created', 'datetime', [
             'default' => null,
             'null' => false,
@@ -23,19 +23,27 @@ class CreateUsers extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
-        $table->addColumn('pseudo', 'string', [
+        $table->addColumn('title', 'string', [
             'default' => null,
-            'limit' => 20,
+            'limit' => 100,
             'null' => false,
         ]);
-        $table->addColumn('password', 'string', [
+        $table->addColumn('img', 'string', [
             'default' => null,
-            'limit' => 255,
+            'limit' => 50,
             'null' => false,
         ]);
-        $table->addColumn('level', 'string', [
+        $table->addColumn('content', 'text', [
             'default' => null,
-            'limit' => 20,
+            'null' => false,
+        ]);
+        $table->addColumn('date', 'date', [
+            'default' => null,
+            'null' => false,
+        ]);
+        $table->addColumn('user_id', 'integer', [
+            'default' => null,
+            'limit' => 11,
             'null' => false,
         ]);
         $table->create();
