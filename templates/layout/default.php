@@ -39,8 +39,23 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
         </div>
         <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
+            <?= $this->Html->link('Sneakers', ['controller' => 'Sneakers', 'action' => 'index'])//, ['escape' => false, 'class' => ($this->templatePath == 'Brands' && $this->template == 'index') ? 'active']) ?>
+           
+            <?= $this->Html->link('Marques', ['controller' => 'Brands', 'action' => 'index'])//, ['escape' => false, 'class' => ($this->templatePath == 'Brands' && $this->template == 'index') ? 'active']) ?>
+
+            <?= $this->Html->link('Actualités', ['controller' => 'Articles', 'action' => 'index'])//, ['escape' => false, 'class' => ($this->templatePath == 'Articles' && $this->template == 'index') ? 'active']) ?>
+
+            <?php if($this->request->getAttribute('identity') == null) : ?>
+
+                <?= $this->Html->link('Se connecter', ['controller' => 'Users', 'action' => 'login'])//, ['escape' => false, 'class' => ($this->templatePath == 'Users' && $this->template == 'login') ? 'active']) ?>
+
+                <?= $this->Html->link('S\'inscrire', ['controller' => 'Users', 'action' => 'signup'])//, ['escape' => false, 'class' => ($this->templatePath == 'Users' && $this->template == 'signup') ? 'active']) ?>
+
+            <?php else : ?>
+
+                <?= $this->Html->link('Se déconnecter', ['controller' => 'Users', 'action' => 'logout']) ?>
+
+            <?php endif; ?>
         </div>
     </nav>
     <main class="main">

@@ -54,7 +54,7 @@ class SneakersTable extends Table
         ]);
         $this->hasMany('Favorites', [
             'foreignKey' => 'sneaker_id',
-        ]);
+        ]); 
     }
 
     /**
