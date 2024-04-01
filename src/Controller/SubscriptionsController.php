@@ -39,7 +39,7 @@ class SubscriptionsController extends AppController
 	    $userId = $this->Authentication->getIdentity()->id;
 
 	    if ($brandId === null) {
-	        // Gère l'erreur si $brandId est null
+	        //error
 	        $this->Flash->error('Identifiant de la marque manquant.');
 	        return $this->redirect(['controller' => 'Brands', 'action' => 'index']);
 	    }

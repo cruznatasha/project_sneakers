@@ -36,7 +36,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+            <a id="logo" href="<?= $this->Url->build('/') ?>"><?= $this->Html->image('cruz-rose.png') ?></a>
         </div>
         <div class="top-nav-links">
             <?= $this->Html->link('Sneakers', ['controller' => 'Sneakers', 'action' => 'index'])//, ['escape' => false, 'class' => ($this->templatePath == 'Brands' && $this->template == 'index') ? 'active']) ?>

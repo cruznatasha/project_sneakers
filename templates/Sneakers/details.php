@@ -1,4 +1,4 @@
-<div class="article">
+<div class="article-sneaker">
     <h1 class="details-name"><?= $s->name ?></h1>
 
     <div class="container-sneakers-details">
@@ -19,8 +19,8 @@
 <?php if ($this->request->getAttribute('identity')->level == 'admin') : ?>
     <div class="edn">
         
-        <p><?= $this->Html->link('Modifier la paire', ['controller' => 'Sneakers', 'action' => 'edit']) ?></p>
-        <p><?= $this->Html->link('Supprimer la paire', ['controller' => 'Sneakers', 'action' => 'delete']) ?></p>
+        <p><?= $this->Html->link('Modifier la paire', ['controller' => 'Sneakers', 'action' => 'edit', $s->id]) ?></p>
+        <p><?= $this->Html->link('Supprimer la paire', ['controller' => 'Sneakers', 'action' => 'delete', $s->id]) ?></p>
 
     </div>
 <?php endif; ?>

@@ -24,8 +24,8 @@
 <?php if ($this->request->getAttribute('identity')->level == 'admin') : ?>
 	<div class="edn">
 		
-		<p><?= $this->Html->link('Modifier l\'article', ['controller' => 'Articles', 'action' => 'edit']) ?></p>
-    	<p><?= $this->Html->link('Supprimer l\'article', ['controller' => 'Articles', 'action' => 'delete']) ?></p>
+		<p><?= $this->Html->link('Modifier l\'article', ['controller' => 'Articles', 'action' => 'edit', $a->id]) ?></p>
+    	<p><?= $this->Html->link('Supprimer l\'article', ['controller' => 'Articles', 'action' => 'delete', $a->id]) ?></p>
 
 	</div>
 <?php endif; ?>

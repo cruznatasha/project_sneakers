@@ -25,7 +25,6 @@ Class SneakersController extends AppController{
 	            ->extract('sneaker_id')
 	            ->toList();
 	    } else {
-	        // L'identité de l'utilisateur n'est pas définie, initialiser $favoriteId à vide
 	        $favoriteId = [];
 	    }
 
@@ -90,8 +89,10 @@ Class SneakersController extends AppController{
 		//fin du form
 		endif; 
 
+		$brands = $this->Sneakers->Brands->find('list', ['keyField' => 'id', 'valueField' => 'name']);
+
 		//on transmet cette entité à la vue
-		$this->set(compact('new')); 
+		$this->set(compact('new', 'brands')); 
 	}
 
 	public function edit(int $id = null){

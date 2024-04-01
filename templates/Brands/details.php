@@ -35,8 +35,8 @@
 <?php if ($this->request->getAttribute('identity')->level == 'admin') : ?>
 	<div class="edn">
 		
-		<p><?= $this->Html->link('Modifier la marque', ['controller' => 'Brands', 'action' => 'edit']) ?></p>
-    	<p><?= $this->Html->link('Supprimer la marque', ['controller' => 'Brands', 'action' => 'delete']) ?></p>
+		<p><?= $this->Html->link('Modifier la marque', ['controller' => 'Brands', 'action' => 'edit', $b->id]) ?></p>
+    	<p><?= $this->Html->link('Supprimer la marque', ['controller' => 'Brands', 'action' => 'delete', $b->id]) ?></p>
 
 	</div>
 <?php endif; ?>

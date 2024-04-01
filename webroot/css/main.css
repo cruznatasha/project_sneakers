@@ -23,6 +23,11 @@ a{
 	color: black;
 }
 
+.top-nav-title{
+    height: 60px;
+    width: 60px;
+}
+
 /* liste des sneakers */
 
 .list {
@@ -134,6 +139,14 @@ a{
 
 /* details d'une sneakers */
 
+.article-sneaker {
+	position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    height: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 .details-name {
     font-size: 24px;
