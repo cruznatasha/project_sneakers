@@ -2,24 +2,30 @@
 
 ?>
 
-<h1>
-	<?= $a->title ?>
-</h1>
+<div class="container-articles-details">
+	<div>
+		<h1>
+			<?= $a->title ?>
+		</h1>
+		<p>Date de publication : <?= $a->date ?></p>
+	</div>
 
-<table>
-	<thead>
+	<figure>
+		<?= $this->Html->image($a->img) ?>
+	</figure>
 
-		<figure>
-			<img src="../webroot/img/<?= $a->image ?>">
-		</figure>
+</div>
 
-		<tr>
-			<td><?= $a->content ?></td>
-		</tr>
+<p class="content">
+	<?= $a->content ?>
+</p>
 
-		<tr>
-			<th>date : <?= $a->date ?></th>
-		</tr>
+
+<?php if ($this->request->getAttribute('identity')->level == 'admin') : ?>
+	<div class="edn">
 		
-	</thead>
-</table>
+		<p><?= $this->Html->link('Modifier l\'article', ['controller' => 'Articles', 'action' => 'edit']) ?></p>
+    	<p><?= $this->Html->link('Supprimer l\'article', ['controller' => 'Articles', 'action' => 'delete']) ?></p>
+
+	</div>
+<?php endif; ?>

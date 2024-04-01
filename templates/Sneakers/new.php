@@ -1,6 +1,7 @@
 <?php   	//templates/Brands/new.php   ?>
 
-<h1>Ajouter une marque</h1>
+<h1>Ajouter une paire</h1>
+
 <?= $this->Form->create($new); ?>
 
 	<?= $this->Form->control('name', ['label' => 'Nom de la paire']); ?>

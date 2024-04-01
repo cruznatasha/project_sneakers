@@ -1,0 +1,231 @@
+/* main.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+a{
+	color: black;
+}
+
+/* liste des sneakers */
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+
+.list h1{
+	font-size: 70px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.sneaker {
+	position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    height: 450px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sneaker figure {
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    overflow:  hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.sneaker-name {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.button-heart {
+	position: absolute;
+	bottom: 15px;
+	display: block;
+    right: 20px;
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: right;
+}
+
+/* brands */
+
+.brand {
+	position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-name{
+	color: pink;
+	font-weight: bold;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+
+.button {
+	position: absolute;
+	bottom: 15px;
+	display: block;
+    right: 20px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: right;
+}
+
+/* articles */
+
+.article {
+	position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    height: 450px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article figure {
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    overflow:  hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.article-title {
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+/* details d'une sneakers */
+
+
+.details-name {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container-sneakers-details {
+    width: 70%;
+    margin: auto;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.details-image {
+    width: 50%;
+    align-items: left;
+}
+
+.details-image figure {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.details-info {
+    width: 50%;
+}
+
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.details-table th,
+.details-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.details-table th {
+    text-align: left;
+    font-weight: bold;
+}
+
+.details-table td {
+    text-align: left;
+}
+
+/* brand details */
+
+.brand-entete, .edn{
+	display: flex;
+	justify-content: space-between;
+	border: 2px solid pink;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding: 15px;
+}
+
+/* articles details */
+
+.container-articles-details {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.container-articles-details div,
+.container-articles-details figure {
+    flex: 1;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.content{
+	display: flex;
+	width: 90%;
+	align-items: center;
+	margin: 0 auto;
+	margin-bottom: 90px;
+}
+
+
+a:hover {
+    color: pink;
+}

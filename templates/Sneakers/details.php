@@ -1,32 +1,27 @@
-<?php    		//templates/Sneakers/details.php 
+<div class="article">
+    <h1 class="details-name"><?= $s->name ?></h1>
 
-?>
+    <div class="container-sneakers-details">
+        <div class="details">
+            <div class="details-image">
+                <figure>
+                    <?= $this->Html->image($s->image) ?>
+                </figure>
+            </div>
+            <div class="details-info">
+                <p><strong>Nom :</strong> <?= $s->name ?></p>
+                <p><strong>Marque :</strong> <?= $s->brand->name ?></p>
+                <p><strong>Date de sortie :</strong> <?= $s->releasedate ?></p>
+            </div>
+        </div>
+    </div>
 
-<h1>
-	<?= $s->name ?>
-</h1>
+<?php if ($this->request->getAttribute('identity')->level == 'admin') : ?>
+    <div class="edn">
+        
+        <p><?= $this->Html->link('Modifier la paire', ['controller' => 'Sneakers', 'action' => 'edit']) ?></p>
+        <p><?= $this->Html->link('Supprimer la paire', ['controller' => 'Sneakers', 'action' => 'delete']) ?></p>
 
-<table>
-	<thead>
-		<tr>
-			<th>Nom : </th>
-			<td><?= $s->name ?></td>
-		</tr>
-
-		<figure>
-			<?= $this->Html->image($s->image) ?>
-		</figure>
-
-		<tr>
-			<th>Marque : </th>
-			<td><?= $s->brand->name ?></td>
-		</tr>
-			
-		<tr>
-			<th>Date de sortie : </th>
-			<td><?= $s->releasedate ?></td>
-		</tr>
-
-
-	</thead>
-</table>
+    </div>
+<?php endif; ?>
+</div>

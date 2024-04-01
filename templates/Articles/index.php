@@ -1,28 +1,30 @@
-<?php   		//templates/Articles/index.php ?>
+<?php   		//templates/Brands/index.php ?>
 
-<h1>Nos actualités</h1>
+<?php //var_dump($this->request->getAttribute('identity')->level)?>
 
-<table>
-	<thead>
-		<tr>
-			<th>Titre</th>
-		</tr>
-	</thead>
+<section class="list">
 
-	<tbody>
-		<?php foreach($allArticles as $a) : ?>
-			<tr>
-				<td><?= $this->Html->link($a->title, ['controller' => 'Articles', 'action' => 'details', $a->id]) ?></td>
-			</tr>
-		<?php endforeach; ?>
-	</tbody>
-</table>
+	<h1>Tous les articles</h1>
 
-<?php var_dump($this->request->getAttribute('identity')->level)?>
+    <?php foreach ($allArticles as $a) : ?>
+        <article class="article">
 
-<?php if($this->request->getAttribute('identity')->level == 'admin') : ?>
+            <figure>
+				<?= $this->Html->image($a->img) ?>
+			</figure>
 
-<p><?= $this->Html->link('Ajouter un article', ['controller' => 'Articles', 'action' => 'new']) ?></p>
-	
+            <p class="article-title"><?= $this->Html->link($a->title, ['action' => 'details', $a->id]) ?></p>
+            
+        </article>
+    <?php endforeach; ?>
+
+
+</section>
+
+<?php if ($this->request->getAttribute('identity')->level == 'admin') : ?>
+    <div class="edn">
+        
+        <p><?= $this->Html->link('Ajouter un article', ['controller' => 'Articles', 'action' => 'new']) ?></p>
+
+    </div>
 <?php endif; ?>
-

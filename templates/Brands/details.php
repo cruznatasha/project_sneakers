@@ -1,19 +1,42 @@
-<?php   		//templates/Brands/details.php ?>
 
-<h1>Sneakers de la marque : <?php $b->name ?></h1>
+<div class="brand-entete">
 
-<table>
-	<thead>
-		<tr>
-			<th>Paires de la marque</th>
-		</tr>
-	</thead>
+	<?php if (isset($subscription) && $subscription) : ?>
+	    <p>Vous êtes déjà abonné à cette marque.</p>
+	    <?= $this->Form->postLink(
+	        'Se désabonner',
+	        ['controller' => 'Subscriptions', 'action' => 'unsubscribe', $b->id],
+	        ['confirm' => 'Voulez-vous vraiment vous désabonner ?']
+	    ) ?>
+	<?php else : ?>
+	    <p>Vous n'êtes pas encore abonné à cette marque.</p>
+	    <?= $this->Form->postLink(
+	        'S\'abonner',
+	        ['controller' => 'Subscriptions', 'action' => 'subscribe', $b->id],
+	        ['confirm' => 'Voulez-vous vraiment vous abonner à cette marque ?']
+	    ) ?>
+	<?php endif; ?>
+</div>
 
-	<tbody>
-		<?php foreach($b->sneakers as $s) : ?>
-			<tr>
-				<td><?= $this->Html->link($s->name, ['controller' => 'Sneakers', 'action' => 'details', $s->id]) ?></td>
-			</tr>
-		<?php endforeach; ?>
-	</tbody>
-</table>
+
+
+<section class="list">
+    <h1>Liste des Sneakers <?= $b->name ?></h1>
+    <?php foreach ($b->sneakers as $s) : ?>
+        <article class="sneaker">
+            <figure>
+                <?= $this->Html->image($s->image) ?>
+            </figure>
+            <p class="sneaker-name"><?= $this->Html->link($s->name, ['controller' => 'Sneakers', 'action' => 'details', $s->id]) ?></p>
+        </article>
+    <?php endforeach; ?>
+</section>
+
+<?php if ($this->request->getAttribute('identity')->level == 'admin') : ?>
+	<div class="edn">
+		
+		<p><?= $this->Html->link('Modifier la marque', ['controller' => 'Brands', 'action' => 'edit']) ?></p>
+    	<p><?= $this->Html->link('Supprimer la marque', ['controller' => 'Brands', 'action' => 'delete']) ?></p>
+
+	</div>
+<?php endif; ?>
